@@ -100,4 +100,3 @@ function quickSort(array) {
 var arr = [2,9,1,8,7,3,6,4,5];
 var arrSort = quickSort(arr);
 console.log(arrSort);
-console.log(arrSort == arr);
