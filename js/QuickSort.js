@@ -68,27 +68,28 @@ function quickSort(array) {
         return array;
     }
     function sort(prev,numsize){
-        var noniusLeft = prev;
+        var noniusLeft = prev;          // 游标变量
         var noniusRight = numsize-1;
         var flag = array[numsize-1];
         if ((numsize - prev) > 1) {
             while (noniusRight > noniusLeft) {
+
+                /*    与标识数比较，左小又大    */
                 for(; noniusLeft < noniusRight ; noniusLeft++){
                     if (array[noniusLeft] >= flag) {
                         array[noniusRight--] = array[noniusLeft];
-                        console.log(array);
                         break;
                     }
                 }
                 for( ; noniusLeft < noniusRight ; noniusRight--){
                     if (array[noniusRight] < flag) {
                         array[noniusLeft++] = array[noniusRight];
-                        console.log(array);
                         break;
                     }
                 }
             }
-            array[noniusLeft] = flag;
+
+            array[noniusLeft] = flag;       // 标识放到中间
             sort(0,noniusLeft-1);
             sort(noniusLeft,numsize);
         }
